@@ -1,8 +1,10 @@
 package com.aluracurso.desafio.principal;
 
+import com.aluracurso.desafio.model.Datos;
 import com.aluracurso.desafio.service.ConsumoAPI;
 import com.aluracurso.desafio.service.ConvierteDatos;
 
+import javax.xml.crypto.Data;
 import java.util.Scanner;
 
 public class Principal {
@@ -15,5 +17,8 @@ public class Principal {
     public  void muestraElMenu(){
 var json = consumoAPI.obtenerDatos(URL_BASE);
         System.out.println(json);
+
+        var datos = convierteDatos.obtnerDatos(json, Datos.class);
+        System.out.println(datos);
     }
 }
